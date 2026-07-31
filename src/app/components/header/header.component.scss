@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+.mobile-menu {
+  // Base hidden state — GSAP animates height/autoAlpha on open & close.
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+
+  // Hide on large screens where the desktop nav takes over. This lives here
+  // (instead of Tailwind's `lg:hidden`) because component styles are unlayered
+  // and would otherwise override the layered `display: none` utility.
+  @media (min-width: 64rem) {
+    display: none;
+  }
+}
+
+// The close icon starts hidden; GSAP reveals it when the menu opens.
+.menu-icon--close {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// Desktop nav underline — GSAP sweeps it in on hover/focus. The base
+// scaleX(0) prevents a flash before the animation is set up.
+.nav-link-underline {
+  transform: scaleX(0);
+  transform-origin: left center;
+}

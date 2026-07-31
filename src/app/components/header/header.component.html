@@ -1,0 +1,173 @@
+<a
+  href="#main"
+  class="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-indigo-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+>
+  {{ 'NAV.SKIP' | translate }}
+</a>
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-lg dark:border-slate-800/70 dark:bg-slate-950/80"
+>
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-menu"
+        [attr.aria-label]="
+          isMenuOpen() ? ('NAV.CLOSE_MENU' | translate) : ('NAV.OPEN_MENU' | translate)
+        "
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-all hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-indigo-400 cursor-pointer lg:hidden"
+      >
+        <span class="relative block h-4 w-4">
+          <svg class="menu-icon menu-icon--open absolute inset-0 h-4 w-4" aria-hidden="true">
+            <use href="#icon-menu"></use>
+          </svg>
+          <svg class="menu-icon menu-icon--close absolute inset-0 h-4 w-4" aria-hidden="true">
+            <use href="#icon-close"></use>
+          </svg>
+        </span>
+      </button>
+
+      <a
+        href="#home"
+        class="text-lg font-extrabold tracking-tight text-slate-900 transition-colors hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:text-white dark:hover:text-indigo-400"
+      >
+        {{ profileService.name() }}<span class="text-indigo-400">.</span>
+      </a>
+    </div>
+
+    <nav
+      aria-label="{{ 'NAV.LABEL' | translate }}"
+      class="hidden items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300 lg:flex"
+    >
+      <a
+        href="#about"
+        class="nav-link relative transition-colors hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+      >
+        <span class="nav-link-text relative inline-block">{{ 'NAV.ABOUT' | translate }}</span>
+        <span
+          class="nav-link-underline pointer-events-none absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-indigo-500"
+        ></span>
+      </a>
+      <a
+        href="#projects"
+        class="nav-link relative transition-colors hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+      >
+        <span class="nav-link-text relative inline-block">{{ 'NAV.PROJECTS' | translate }}</span>
+        <span
+          class="nav-link-underline pointer-events-none absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-indigo-500"
+        ></span>
+      </a>
+      <a
+        href="#skills"
+        class="nav-link relative transition-colors hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+      >
+        <span class="nav-link-text relative inline-block">{{ 'NAV.SKILLS' | translate }}</span>
+        <span
+          class="nav-link-underline pointer-events-none absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-indigo-500"
+        ></span>
+      </a>
+      <a
+        href="#contact"
+        class="nav-link relative transition-colors hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+      >
+        <span class="nav-link-text relative inline-block">{{ 'NAV.CONTACT' | translate }}</span>
+        <span
+          class="nav-link-underline pointer-events-none absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-indigo-500"
+        ></span>
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <div
+        role="group"
+        aria-label="{{ 'NAV.LANG' | translate }}"
+        class="flex items-center rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-bold dark:border-slate-700 dark:bg-slate-800"
+      >
+        <button
+          type="button"
+          (click)="languageService.useLang(AppLanguage.en)"
+          [attr.aria-pressed]="languageService.currentLang() === AppLanguage.en"
+          [class]="
+            languageService.currentLang() === AppLanguage.en
+              ? 'rounded-full bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
+              : 'text-slate-500 dark:text-slate-400'
+          "
+          class="rounded-full px-3 py-1.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 cursor-pointer"
+        >
+          EN
+        </button>
+        <button
+          type="button"
+          (click)="languageService.useLang(AppLanguage.fa)"
+          [attr.aria-pressed]="languageService.currentLang() === AppLanguage.fa"
+          [class]="
+            languageService.currentLang() === AppLanguage.fa
+              ? 'rounded-full bg-white text-indigo-600 shadow-sm dark:bg-slate-900 dark:text-indigo-400'
+              : 'text-slate-500 dark:text-slate-400'
+          "
+          class="rounded-full px-3 py-1.5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 cursor-pointer"
+        >
+          فارسی
+        </button>
+      </div>
+
+      <button
+        type="button"
+        (click)="themeService.toggle()"
+        [attr.aria-label]="
+          themeService.theme() === ThemeMode.dark
+            ? ('TOGGLE.SUN' | translate)
+            : ('TOGGLE.MOON' | translate)
+        "
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-all hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:text-indigo-400 cursor-pointer"
+      >
+        @if (themeService.theme() === ThemeMode.dark) {
+          <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-sun"></use></svg>
+        } @else {
+          <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-moon"></use></svg>
+        }
+      </button>
+    </div>
+  </div>
+
+  <div
+    #mobileMenu
+    id="mobile-menu"
+    [attr.inert]="isMenuOpen() ? null : ''"
+    [attr.aria-hidden]="!isMenuOpen()"
+    class="mobile-menu border-t border-slate-200/70 bg-white/95 backdrop-blur-lg dark:border-slate-800/70 dark:bg-slate-950/95"
+  >
+    <nav
+      aria-label="{{ 'NAV.LABEL' | translate }}"
+      class="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-4 sm:px-6"
+    >
+      <a
+        href="#about"
+        (click)="closeMenu()"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-indigo-400"
+        >{{ 'NAV.ABOUT' | translate }}</a
+      >
+      <a
+        href="#projects"
+        (click)="closeMenu()"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-indigo-400"
+        >{{ 'NAV.PROJECTS' | translate }}</a
+      >
+      <a
+        href="#skills"
+        (click)="closeMenu()"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-indigo-400"
+        >{{ 'NAV.SKILLS' | translate }}</a
+      >
+      <a
+        href="#contact"
+        (click)="closeMenu()"
+        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-indigo-400"
+        >{{ 'NAV.CONTACT' | translate }}</a
+      >
+    </nav>
+  </div>
+</header>

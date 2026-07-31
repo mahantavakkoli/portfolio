@@ -1,0 +1,27 @@
+<section id="contact" class="relative mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
+  <div class="mb-12 text-center" data-reveal>
+    <p class="text-sm font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400">{{ 'NAV.CONTACT' | translate }}</p>
+    <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">{{ 'CONTACT.TITLE' | translate }}</h2>
+    <div class="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-indigo-500 to-violet-500"></div>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-stagger>
+    @for (link of profileService.contactLinks(); track link.key) {
+      <a
+        [href]="link.href"
+        target="_blank"
+        rel="noopener"
+        class="contact-card flex items-center gap-4 rounded-2xl border border-slate-200 bg-white/70 p-5 shadow-sm backdrop-blur will-change-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:border-slate-800 dark:bg-slate-900/60"
+      >
+        <span class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-500 dark:bg-indigo-500/10 dark:text-indigo-400" aria-hidden="true">
+          <svg class="h-5 w-5"><use [attr.href]="'#icon-' + link.icon"></use></svg>
+        </span>
+        <span class="contact-text min-w-0">
+          <span class="block text-sm font-semibold text-slate-900 dark:text-white">{{ link.label }}</span>
+          <span class="block truncate text-sm text-slate-500 dark:text-slate-400">{{ link.handle }}</span>
+        </span>
+        <svg class="contact-arrow ms-auto h-4 w-4 shrink-0 text-slate-400 rtl:rotate-180" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+      </a>
+    }
+  </div>
+</section>

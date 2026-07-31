@@ -1,0 +1,56 @@
+{
+  "NAV": {
+    "ABOUT": "درباره من",
+    "CONTACT": "ارتباط با من",
+    "PROJECTS": "نمونه کارها",
+    "SKILLS": "مهارت‌ها",
+    "SKIP": "پرش به محتوا",
+    "LABEL": "منوی اصلی",
+    "LANG": "زبان",
+    "OPEN_MENU": "باز کردن منو",
+    "CLOSE_MENU": "بستن منو"
+  },
+  "TOGGLE": {
+    "SUN": "تغییر به حالت روشن",
+    "MOON": "تغییر به حالت تاریک"
+  },
+  "HERO": {
+    "AVAILABLE": "آماده همکاری",
+    "SCROLL": "اسکرول به پایین"
+  },
+  "ABOUT": {
+    "EYEBROW": "من کی هستم",
+    "TITLE": "درباره من"
+  },
+  "INFO": {
+    "JOB_LABEL": "شغل",
+    "LOCATION_LABEL": "محل سکونت",
+    "EXPERIENCE_LABEL": "تجربه"
+  },
+  "CONTACT": {
+    "TITLE": "ارتباط با من"
+  },
+  "LANGUAGES": {
+    "TITLE": "زبان‌ها"
+  },
+  "PERSONAL": {
+    "TITLE": "اطلاعات شخصی",
+    "AGE_LABEL": "سن",
+    "EDUCATION_LABEL": "تحصیلات"
+  },
+  "PROJECTS": {
+    "TITLE": "نمونه کارها"
+  },
+  "SKILLS": {
+    "TITLE": "مهارت‌های فنی",
+    "FILTER": "فیلتر مهارت‌ها",
+    "ALL": "همه",
+    "TOOLS": "ابزارها",
+    "FRONT_END": "فرانت‌اند",
+    "FRAMEWORK": "فریم‌ورک",
+    "LANGUAGE": "زبان",
+    "ANDROID": "اندروید",
+    "BACK_END": "بک‌اند"
+  },
+  "FOOTER": "ساخته‌شده با Angular، Tailwind، GSAP"
+}

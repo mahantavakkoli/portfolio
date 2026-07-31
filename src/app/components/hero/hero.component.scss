@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+/* Scroll-parallax stage: provides the perspective the tilt stage rotates
+   against, and is the element that drifts while the hero scrolls away. */
+.hero-parallax {
+  perspective: 1000px;
+}
+
+/* 3D tilt stage: children carrying .hero-depth-* translateZ pop out toward the
+   cursor as this element rotates (see setupMouseTilt in hero.component.ts). */
+.hero-tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hero-depth-1 {
+  transform: translateZ(18px);
+}
+
+.hero-depth-2 {
+  transform: translateZ(36px);
+}
+
+.hero-depth-3 {
+  transform: translateZ(54px);
+}

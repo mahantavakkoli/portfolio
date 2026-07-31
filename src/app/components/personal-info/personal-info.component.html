@@ -1,0 +1,43 @@
+<div class="mx-auto grid max-w-6xl gap-6 px-4 pb-20 sm:px-6 md:grid-cols-2 lg:px-8">
+  <div class="rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60" data-reveal>
+    <div class="mb-6 flex items-center gap-3">
+      <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-500 dark:bg-indigo-500/10 dark:text-indigo-400" aria-hidden="true">
+        <svg class="h-5 w-5"><use href="#icon-languages"></use></svg>
+      </span>
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ 'LANGUAGES.TITLE' | translate }}</h3>
+    </div>
+    <div class="space-y-4">
+      @for (language of profileService.spokenLanguages(); track language.key) {
+        <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-5 py-4 dark:bg-slate-800/60">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl" aria-hidden="true">{{ language.flag }}</span>
+            <span class="font-semibold text-slate-800 dark:text-slate-100">{{ language.name }}</span>
+          </div>
+          <span class="text-sm font-medium text-slate-500 dark:text-slate-400">{{ language.level }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-900/60" data-reveal>
+    <div class="mb-6 flex items-center gap-3">
+      <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-500 dark:bg-indigo-500/10 dark:text-indigo-400" aria-hidden="true">
+        <svg class="h-5 w-5"><use href="#icon-user"></use></svg>
+      </span>
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ 'PERSONAL.TITLE' | translate }}</h3>
+    </div>
+    <div class="space-y-4">
+      <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-5 py-4 dark:bg-slate-800/60">
+        <span class="font-semibold text-slate-800 dark:text-slate-100">{{ 'PERSONAL.AGE_LABEL' | translate }}</span>
+        <span class="text-sm font-medium text-slate-500 dark:text-slate-400">{{ profileService.personalInfo().age }} {{ profileService.personalInfo().ageSuffix }}</span>
+      </div>
+      <div class="flex items-center justify-between rounded-2xl bg-slate-50 px-5 py-4 dark:bg-slate-800/60">
+        <span class="font-semibold text-slate-800 dark:text-slate-100">{{ 'PERSONAL.EDUCATION_LABEL' | translate }}</span>
+        <span class="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
+          <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-graduation"></use></svg>
+          {{ profileService.personalInfo().education }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

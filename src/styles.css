@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Smooth scrolling for anchor jumps — but only when the user hasn't asked
+   for reduced motion. GSAP ScrollTrigger forces scroll-behavior to auto at
+   runtime during its refresh() measurement cycle (see app.component.ts), so
+   this never corrupts trigger positions. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+html.lang-fa {
+  font-family: 'Vazirmatn', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+html.lang-fa body {
+  font-family: 'Vazirmatn', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0 !important;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-200;
+}
+
+::selection {
+  @apply bg-indigo-500 text-white;
+}

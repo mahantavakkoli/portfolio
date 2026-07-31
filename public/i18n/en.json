@@ -1,0 +1,56 @@
+{
+  "NAV": {
+    "ABOUT": "About",
+    "CONTACT": "Contact",
+    "PROJECTS": "Projects",
+    "SKILLS": "Skills",
+    "SKIP": "Skip to content",
+    "LABEL": "Primary",
+    "LANG": "Language",
+    "OPEN_MENU": "Open menu",
+    "CLOSE_MENU": "Close menu"
+  },
+  "TOGGLE": {
+    "SUN": "Switch to light mode",
+    "MOON": "Switch to dark mode"
+  },
+  "HERO": {
+    "AVAILABLE": "Available for work",
+    "SCROLL": "Scroll down"
+  },
+  "ABOUT": {
+    "EYEBROW": "Who I am",
+    "TITLE": "About me"
+  },
+  "INFO": {
+    "JOB_LABEL": "Job",
+    "LOCATION_LABEL": "Location",
+    "EXPERIENCE_LABEL": "Experience"
+  },
+  "CONTACT": {
+    "TITLE": "Contact me"
+  },
+  "LANGUAGES": {
+    "TITLE": "Languages"
+  },
+  "PERSONAL": {
+    "TITLE": "Personal info",
+    "AGE_LABEL": "Age",
+    "EDUCATION_LABEL": "Education"
+  },
+  "PROJECTS": {
+    "TITLE": "Projects"
+  },
+  "SKILLS": {
+    "TITLE": "Technical skills",
+    "FILTER": "Filter skills",
+    "ALL": "All",
+    "TOOLS": "Tools",
+    "FRONT_END": "Front-end",
+    "FRAMEWORK": "Framework",
+    "LANGUAGE": "Language",
+    "ANDROID": "Android",
+    "BACK_END": "Back-end"
+  },
+  "FOOTER": "Built with Angular, Tailwind, GSAP"
+}
